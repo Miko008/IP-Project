@@ -9,6 +9,7 @@ public class TestScript : MonoBehaviour
     void Start()
     {
         //develop test
+        //dzia³a
     }
 
     // Update is called once per frame
