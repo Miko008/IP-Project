@@ -9,6 +9,7 @@ public class testPaula : MonoBehaviour
     {
         int testowanie = 123;
         //test 2
+        //przyjąłem
     }
 
     // Update is called once per frame
