@@ -11,6 +11,7 @@ public class testPaula : MonoBehaviour
         //test 2
         //przyjąłem
         //przyjęłam też
+        //jo ni
     }
 
     // Update is called once per frame
