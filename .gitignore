@@ -36,3 +36,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.log
+BattleShips/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+*.meta
