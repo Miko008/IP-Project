@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
-        //develop test
-        //dzia³a
+        int a = 0;
     }
 
     // Update is called once per frame
