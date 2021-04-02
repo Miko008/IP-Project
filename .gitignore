@@ -29,6 +29,14 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 *.log
+*.exe0.log
+*.exe1.log
+*.exe2.log
+*.exe3.log
+*.exe4.log
+*.exe5.log
+*.exe6.log
+*.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -36,3 +44,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.log
