@@ -24,7 +24,7 @@ public class boardmaker : MonoBehaviour
             for (int col = 0; col < cols; col++)
             {
                     Instantiate(oritile, 
-                    new Vector3(col*tileSpacing, 0, row * -tileSpacing),
+                    this.transform.position + new Vector3(col*tileSpacing, 0, row * -tileSpacing),
                     Quaternion.identity);
             }
         }
