@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Bomber : MonoBehaviour
 {
-    public GameObject Bomb = null;
+    public GameObject Bomb;
     public int bomb_height = 800,
                 dropping_speed = 10;
     private bool has_dropped = false;
     void Update()
     {
         if (Input.GetMouseButton(0) && !has_dropped) {
-			HandleInput();
+			DropBomb();
             has_dropped = true;
 		}
         if (Input.GetMouseButton(1))
             has_dropped=false;
     }
 
-    void HandleInput () {
+    void DropBomb() {
 		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 
