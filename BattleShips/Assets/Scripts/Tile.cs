@@ -6,11 +6,10 @@ public class Tile : MonoBehaviour
 {
     public Renderer rend;
     public Color color_ori,
-                color_hover = Color.white,
-                color_disabled = Color.black;
-    public int fade_time = 10000;
+                 color_hover = Color.white,
+                 color_disabled = Color.black;
     private bool clicked = false,
-                can_place = true;
+                 can_place = true;
 
     void Start()
     {
@@ -19,7 +18,8 @@ public class Tile : MonoBehaviour
     }
     void OnMouseEnter()
     {
-        rend.material.color = color_hover;
+        if(!clicked)
+            rend.material.color = color_hover;
     }
     void OnMouseExit()
     {
@@ -29,7 +29,7 @@ public class Tile : MonoBehaviour
     public void Click()
     {
         clicked = true;
-        this.GetComponent<Collider>().enabled = false;
+        //this.GetComponent<Collider>().enabled = false;
         rend.material.color = color_disabled;
     }
     public void DisablePlacing()
