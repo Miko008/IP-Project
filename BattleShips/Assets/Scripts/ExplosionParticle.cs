@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class ExplosionParticle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float live_time,
+                  scale_change;
+    private Color startColor,
+                  endColor;
+    private Renderer rend;
+
+
+    public void SetUp(Color _startColor, Color _endColor, Vector3 scale,  float _live_time, float _scale_change)
     {
-        
+        startColor = _startColor;
+        endColor = _endColor;
+        live_time = _live_time;
+        scale_change = _scale_change;
+        rend = this.GetComponent<Renderer>();
+        rend.material.color = _startColor;
+        gameObject.transform.localScale = scale;
+        StartCoroutine(Fade());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Fade() 
     {
-        
+        for(float timer = 0; timer < live_time; timer += 0.05f) 
+        {
+            timer += Time.deltaTime;
+
+            rend.material.color = Color.Lerp(startColor, endColor, (timer/live_time));
+
+            gameObject.transform.localScale += new Vector3(scale_change,scale_change,scale_change);
+
+            yield return new WaitForSeconds(0.05f);
+        }
+        Destroy(gameObject);
     }
 }

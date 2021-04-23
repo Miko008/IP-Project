@@ -9,14 +9,14 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         Instantiate(explosion, this.transform.position,
          Quaternion.identity);
         Destroy(gameObject);
     }
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         Instantiate(splash, this.transform.position,
          Quaternion.identity);
         Destroy(gameObject);

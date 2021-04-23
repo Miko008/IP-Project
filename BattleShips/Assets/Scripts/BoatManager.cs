@@ -6,8 +6,7 @@ public class BoatManager : MonoBehaviour
 {
     public GameObject[] boats;
 
-    void Update()
-    {
-        
-    }
+    public GameObject SelectBoat(int i)
+    {return null;}
+
 }

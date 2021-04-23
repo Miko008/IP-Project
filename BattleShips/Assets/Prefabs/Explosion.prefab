@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7008173377714029114
+--- !u!1 &5470289815376549410
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7008173377714029112}
-  - component: {fileID: 7008173377714029113}
+  - component: {fileID: 5470289815376549411}
+  - component: {fileID: 5470289815376549420}
   m_Layer: 0
-  m_Name: Smoke
+  m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7008173377714029112
+--- !u!4 &5470289815376549411
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7008173377714029114}
+  m_GameObject: {fileID: 5470289815376549410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 650}
+  m_LocalPosition: {x: 550, y: 12, z: 648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7008173377714029113
+--- !u!114 &5470289815376549420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7008173377714029114}
+  m_GameObject: {fileID: 5470289815376549410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f59f80c40c587e94bae0d5c686e0ad1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 092268c771a2dd0479c41c6368d09661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle_template: {fileID: 5296770040926994284, guid: 46f3bee1b52bbb749a457aa767afeb70, type: 3}
-  spawn_time_min: 0.5
-  spawn_time_max: 2
-  fade_time_min: 100
-  fade_time_max: 200
-  color_hue_min: 70
-  color_hue_max: 255
-  scale_min: 0.5
-  scale_max: 2
-  scale_change: 0.2
-  particle_count: 5
-  spread_vertical: 20
-  spread_horizontal: 10
+  particle_template: {fileID: 4889386539656265539, guid: fe05afadde62ecd478cfac2cb6fd6e0b, type: 3}
+  particle_count: 50
+  spread_vertical: 10
+  spread_horizontal: 20
+  scale_min: 5
+  scale_max: 25
+  live_max: 8
+  live_min: 16
+  start_color_min: {r: 0.95, g: 0.95, b: 0.94383115, a: 1}
+  start_color_max: {r: 1, g: 0.6, b: 0, a: 0}
+  end_color_min: {r: 0, g: 0, b: 0, a: 0}
+  end_color_max: {r: 0.48900002, g: 0.256725, b: 0.256725, a: 0}

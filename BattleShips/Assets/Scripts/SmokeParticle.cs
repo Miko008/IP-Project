@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SmokeParticle : MonoBehaviour
 {
-    public float live_time,
+    private float live_time,
                  color_hue,
                  scale_change;
     private Renderer rend;

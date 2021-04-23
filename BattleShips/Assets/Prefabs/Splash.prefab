@@ -43,7 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092268c771a2dd0479c41c6368d09661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle_template: {fileID: 0}
-  particle_count: 50
-  spread_vertical: 40
+  particle_template: {fileID: 4889386539656265539, guid: fe05afadde62ecd478cfac2cb6fd6e0b, type: 3}
+  particle_count: 100
+  spread_vertical: 25
   spread_horizontal: 10
+  scale_min: 1
+  scale_max: 10
+  live_max: 8
+  live_min: 16
+  start_color_min: {r: 0.74509805, g: 0.75294125, b: 0.75294125, a: 0}
+  start_color_max: {r: 0, g: 0.05740881, b: 1, a: 0}
+  end_color_min: {r: 0.74447995, g: 0.75149864, b: 0.752, a: 0}
+  end_color_max: {r: 0, g: 0.08543253, b: 1, a: 0}
