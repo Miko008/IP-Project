@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2349149177192196248}
   - component: {fileID: 2349149177192196249}
   - component: {fileID: 2349149177192196254}
+  - component: {fileID: -3677663429396107099}
   m_Layer: 2
   m_Name: 4-battleship
   m_TagString: Untagged
@@ -137,3 +138,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: -18.4}
+--- !u!114 &-3677663429396107099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349149177192196255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73502168b7f88bf408c2f1e12705df5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start_angle: {x: -0.05, y: 0, z: -0.1}
+  end_angle: {x: 0.05, y: 0, z: 0.1}

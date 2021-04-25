@@ -7,35 +7,41 @@ public class Controller : MonoBehaviour
     //public GameObject[] Boats;
     public int y_offset = 60,
                 y_offset_set = 30;
+    public Material placing_mat;
+    public Color shadow_color,
+                 wrong_color;
     private GameObject boat;
+    private Renderer rend;
     private bool is_placing = false;
-    private Color color;
+    private Color ori_color;
+    private Material ori_mat;
 
 
     void Update()
     {
-        if (is_placing) {
+        if(is_placing)
+        {
             ShowBoat();
             if(Input.GetKeyDown(KeyCode.R))
                 boat.transform.Rotate(0, 90 , 0);
-        }
-        if (Input.GetKeyDown(KeyCode.W) && !is_placing) {
-            //boat = Instantiate(Boats[0], new Vector3(0, 0, 200), Quaternion.identity);
-            //color = boat.GetComponent<Renderer>().material.color;
-            //color.a = 120f;
-            //boat.GetComponent<Renderer>().material.color = color;
-            is_placing = true;
         }
     }
 
     public void StartPlacing(GameObject _boat)
     {
         Destroy(boat);
+        rend = null;
         boat = Instantiate(_boat, new Vector3(0, 0, 200), Quaternion.identity);
-            //color = boat.GetComponent<Renderer>().material.color;
-            //color.a = 120f;
-            //boat.GetComponent<Renderer>().material.color = color;
-            is_placing = true;
+        rend = boat.GetComponent<Renderer>();
+
+        
+        ori_mat = rend.material;
+        ori_color = rend.material.color;
+
+        rend.material = placing_mat;
+        rend.material.color = shadow_color;
+
+        is_placing = true;
     }
     
 
@@ -53,8 +59,7 @@ public class Controller : MonoBehaviour
 		if (Physics.Raycast(input_ray, out hit)) {                      //mouse -> tile
             placeable = true;
             boat.transform.position = hit.collider.transform.position + Vector3.up * y_offset;
-            //Debug.Log("asdadas");
-            foreach (var item in colliders){       //check for all colliders
+            foreach (var item in colliders){                            //check for all colliders
             //for(int i = 0; i < colliders.Length; i++){
                 //Debug.Log(colliders[i].center);
                 Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
@@ -73,6 +78,12 @@ public class Controller : MonoBehaviour
                     placeable = false;
                 }
             }
+            
+            if(!placeable)
+                rend.material.color = wrong_color;
+            else
+                rend.material.color = shadow_color;
+            
             if(placeable && Input.GetMouseButton(0)){
                 boat.transform.position = hit.collider.transform.position + Vector3.up * y_offset_set;
                 //color.a = 255f;
@@ -83,6 +94,11 @@ public class Controller : MonoBehaviour
                         if (Physics.Raycast(testing_ray, out testing_hit)) 
                             testing_hit.collider.GetComponent<Tile>().DisablePlacing();
                 }
+
+                rend.material = ori_mat;
+                rend.material.color = ori_color;
+
+
                 hit.collider.GetComponent<Tile>().DisablePlacing();
                 is_placing = false;
                 boat = null;
