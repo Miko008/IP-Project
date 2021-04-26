@@ -168,83 +168,13 @@ C# parse time         : 317ms
 candidates check time : 51ms
 console write time    : 1ms
 
-[api-updater (non-obsolete-error-filter)] 4/25/2021 8:32:54 PM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 26.04.2021 00:32:03 : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
-jit/startup time      : 876.0166ms
-moved types parse time: 85ms
-candidates parse time : 2ms
-C# parse time         : 417ms
-candidates check time : 50ms
-console write time    : 1ms
-
-[api-updater (non-obsolete-error-filter)] 4/25/2021 8:33:05 PM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 79.7411ms
-moved types parse time: 79ms
+jit/startup time      : 264,4936ms
+moved types parse time: 70ms
 candidates parse time : 1ms
-C# parse time         : 292ms
-candidates check time : 51ms
-console write time    : 0ms
-
-[api-updater (non-obsolete-error-filter)] 4/25/2021 9:33:41 PM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 277.8139ms
-moved types parse time: 84ms
-candidates parse time : 1ms
-C# parse time         : 418ms
-candidates check time : 58ms
-console write time    : 1ms
-
-[api-updater (non-obsolete-error-filter)] 4/26/2021 12:55:22 AM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 299.2879ms
-moved types parse time: 76ms
-candidates parse time : 1ms
-C# parse time         : 289ms
-candidates check time : 49ms
-console write time    : 0ms
-
-[api-updater (non-obsolete-error-filter)] 4/26/2021 1:25:25 AM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 84.9989ms
-moved types parse time: 77ms
-candidates parse time : 1ms
-C# parse time         : 300ms
-candidates check time : 45ms
-console write time    : 0ms
-
-[api-updater (non-obsolete-error-filter)] 4/26/2021 1:27:29 AM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 80.2842ms
-moved types parse time: 78ms
-candidates parse time : 1ms
-C# parse time         : 301ms
-candidates check time : 44ms
-console write time    : 0ms
-
-[api-updater (non-obsolete-error-filter)] 4/26/2021 1:32:45 AM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 75.9313ms
-moved types parse time: 79ms
-candidates parse time : 1ms
-C# parse time         : 294ms
-candidates check time : 45ms
-console write time    : 0ms
-
-[api-updater (non-obsolete-error-filter)] 4/26/2021 1:33:37 AM : Starting C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
-[api-updater (non-obsolete-error-filter)] 
-----------------------------------
-jit/startup time      : 83.6926ms
-moved types parse time: 78ms
-candidates parse time : 1ms
-C# parse time         : 300ms
-candidates check time : 47ms
+C# parse time         : 279ms
+candidates check time : 36ms
 console write time    : 0ms
 
