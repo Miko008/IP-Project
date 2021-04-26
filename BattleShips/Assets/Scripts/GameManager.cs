@@ -39,6 +39,6 @@ public class GameManager : MonoBehaviour
             bomber.enabled = !bomber.enabled;
             bombing = !bombing;
         }
-        
+
     }
 }

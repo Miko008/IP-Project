@@ -108,5 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73502168b7f88bf408c2f1e12705df5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start_angle: {x: -0.1, y: 0, z: -0.1}
-  end_angle: {x: 0.1, y: 0, z: 0.1}
+  sway_rate: 100
+  x_angle: 0.1
+  z_angle: 0.1
+  drowning_depth: 1000

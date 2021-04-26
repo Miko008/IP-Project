@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        collider.GetComponent<Boat>().TakeDmg();
         //Debug.Log("hit");
         Instantiate(explosion, this.transform.position,
          Quaternion.identity);

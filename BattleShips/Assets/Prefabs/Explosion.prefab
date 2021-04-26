@@ -45,13 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle_template: {fileID: 4889386539656265539, guid: fe05afadde62ecd478cfac2cb6fd6e0b, type: 3}
   particle_count: 50
-  spread_vertical: 10
-  spread_horizontal: 20
+  spread_vertical: 5
+  spread_horizontal: 5
   scale_min: 5
   scale_max: 25
-  live_max: 8
-  live_min: 16
+  live_max: 3
+  live_min: 4
+  scale_change: 1
   start_color_min: {r: 0.95, g: 0.95, b: 0.94383115, a: 1}
-  start_color_max: {r: 1, g: 0.6, b: 0, a: 0}
+  start_color_max: {r: 1, g: 0.6, b: 0, a: 1}
   end_color_min: {r: 0, g: 0, b: 0, a: 0}
   end_color_max: {r: 0.48900002, g: 0.256725, b: 0.256725, a: 0}

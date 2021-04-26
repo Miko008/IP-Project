@@ -25,11 +25,12 @@ public class ExplosionParticle : MonoBehaviour
 
     IEnumerator Fade() 
     {
+        Color c;
         for(float timer = 0; timer < live_time; timer += 0.05f) 
         {
-            timer += Time.deltaTime;
-
-            rend.material.color = Color.Lerp(startColor, endColor, (timer/live_time));
+            c = Color.Lerp(startColor, endColor, (timer/live_time));
+            c.a -= (timer/live_time);
+            rend.material.color = c;
 
             gameObject.transform.localScale += new Vector3(scale_change,scale_change,scale_change);
 
