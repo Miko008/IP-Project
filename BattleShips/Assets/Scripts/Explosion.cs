@@ -39,7 +39,7 @@ public class Explosion : MonoBehaviour
             particle.GetComponent<ExplosionParticle>().SetUp( RandColor(start_color_min, start_color_max),  RandColor(end_color_min, end_color_max), 
             new Vector3(temp_scale,temp_scale,temp_scale), 
             Random.Range(live_min, live_max),
-            scale_change);
+            Random.Range(scale_change, 2 * scale_change));
             
             particle.GetComponent<Rigidbody>().velocity = 
             transform.TransformDirection(Vector3.up * Random.Range(spread_vertical, 5*spread_vertical)
@@ -53,7 +53,7 @@ public class Explosion : MonoBehaviour
 
     IEnumerator CleanUp() 
     {
-        for(float timer = 0; timer < live_max*1.5; timer += 0.5f) 
+        for(float timer = 0; timer < live_max*3; timer += 0.5f) 
             yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

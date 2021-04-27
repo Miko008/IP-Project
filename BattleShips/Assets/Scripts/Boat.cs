@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum Party {Player1, Player2, Enemy}
+
 public class Boat : MonoBehaviour
 {
     public float sway_rate,
@@ -10,23 +13,42 @@ public class Boat : MonoBehaviour
     
     public int drowning_depth = 10000;
 
-    public int hp;
+    private int hp;
+
+    private Party party;
 
     private Vector3 start_angle,
                     end_angle;
+
+    private GameManager gameManager;
+
     void Start()
     {
         hp = GetComponents<BoxCollider>().Length;
         
-
         StartCoroutine(Sway());
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    public void SetParty(Party p)
+    {
+        party = p;
+    }
+
+    public Party GetParty()
+    {
+        return party;
     }
 
     public void TakeDmg()
     {
         hp--;
         if(hp == 0)
+        {
+            gameManager.DeleteBoat(gameObject);
             StartCoroutine(Drown());
+        }
     }
 
     IEnumerator Sway()

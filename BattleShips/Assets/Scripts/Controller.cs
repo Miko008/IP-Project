@@ -16,6 +16,10 @@ public class Controller : MonoBehaviour
     private Color ori_color;
     private Material ori_mat;
 
+    //temp debug
+
+    public bool player_enemy = true;
+
 
     void Update()
     {
@@ -31,10 +35,21 @@ public class Controller : MonoBehaviour
     {
         Destroy(boat);
         rend = null;
+
         boat = Instantiate(_boat, new Vector3(0, 0, 200), Quaternion.identity);
         rend = boat.GetComponent<Renderer>();
-
         
+        if(player_enemy)
+        {
+            Debug.Log("Placing as player");
+            boat.GetComponent<Boat>().SetParty(Party.Player1);
+        }
+        else
+        {
+            Debug.Log("Placing as enemy");
+            boat.GetComponent<Boat>().SetParty(Party.Enemy);
+        }
+
         ori_mat = rend.material;
         ori_color = rend.material.color;
 
