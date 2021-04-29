@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         {
             if(x.GetComponent<Boat>()!=null)
             {
-                Debug.Log(x);
+                //Debug.Log(x);
                 Boat very_temp = x.GetComponent<Boat>();
                 if(very_temp.GetParty() == Party.Player1)
                     Player_boats.Add(x);
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        Debug.Log(Player_boats);
+        //Debug.Log(Player_boats);
     }
 
     public void DeleteBoat(GameObject dead_boat)

@@ -63,37 +63,16 @@ public class Controller : MonoBehaviour
     void ShowBoat() {
 		Ray input_ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-        bool placeable = true;
         //List<Component> colliders = new List<Component>();
         //GetComponents(typeof(Collider), colliders);
         BoxCollider[] colliders = boat.GetComponents<BoxCollider>();
-        
         //Debug.Log(colliders.Length);
 
-
 		if (Physics.Raycast(input_ray, out hit)) {                      //mouse -> tile
-            placeable = true;
             boat.transform.position = hit.collider.transform.position + Vector3.up * y_offset;
-            foreach (var item in colliders){                            //check for all colliders
-            //for(int i = 0; i < colliders.Length; i++){
-                //Debug.Log(colliders[i].center);
-                Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
-                RaycastHit testing_hit;
-                //Debug.DrawRay(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100, Color.green, 1000f, false);
-                if (Physics.Raycast(testing_ray, out testing_hit)){      //if all boxes are clear to place
-                    if(!testing_hit.collider.GetComponent<Tile>().CanPlace())
-                    {
-                        placeable = false;
-                        //Debug.Log("nie mozna postawic");
-                    }
-                }
-                else
-                {
-                    //Debug.Log("nie trafiono");
-                    placeable = false;
-                }
-            }
-            
+
+            bool placeable = CheckCanPlace(boat, colliders);
+
             if(!placeable)
                 rend.material.color = wrong_color;
             else
@@ -103,22 +82,48 @@ public class Controller : MonoBehaviour
                 boat.transform.position = hit.collider.transform.position + Vector3.up * y_offset_set;
                 //color.a = 255f;
                 //boat.GetComponent<Renderer>().material.color = color;
-                foreach (var item in colliders){       //disable for all colliders
-                    Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
-                    RaycastHit testing_hit;
-                        if (Physics.Raycast(testing_ray, out testing_hit)) 
-                            testing_hit.collider.GetComponent<Tile>().DisablePlacing();
-                }
+                DisableTilesBelow(boat, colliders);
 
                 rend.material = ori_mat;
                 rend.material.color = ori_color;
 
-
-                hit.collider.GetComponent<Tile>().DisablePlacing();
                 is_placing = false;
                 boat = null;
         
             }
+        }
+    }
+
+    bool CheckCanPlace(GameObject boat, Collider[] colliders) //also used in AIBoatSetter, could be public somewhere else but its only a uni project
+    {
+        bool placeable = true;
+        foreach (BoxCollider item in colliders){                            //check for all colliders its still a var to make posib
+            //for(int i = 0; i < colliders.Length; i++){
+            //Debug.Log(colliders[i].center);
+            Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
+            RaycastHit testing_hit;
+            //Debug.DrawRay(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100, Color.green, 1000f, false);
+            if (Physics.Raycast(testing_ray, out testing_hit)){      //if all boxes are clear to place
+                if(!testing_hit.collider.GetComponent<Tile>().CanPlace())
+                placeable = false;
+                //Debug.Log("Tiles occupied");
+            }
+            else{
+                placeable = false;
+                //Debug.Log("Tiles not hit");
+            }
+        }
+
+        return placeable;
+    }
+
+    void DisableTilesBelow(GameObject boat, BoxCollider[] colliders)
+    {
+        foreach (BoxCollider item in colliders){       //disable for all colliders
+            Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
+            RaycastHit testing_hit;
+            if (Physics.Raycast(testing_ray, out testing_hit)) 
+                testing_hit.collider.GetComponent<Tile>().DisablePlacing();
         }
     }
 }

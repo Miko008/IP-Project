@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+    public GameObject oritile;
     public int rows = 10,
                 cols = 10,
                 tileSpacing = 40;
-    public GameObject oritile;
+                
 
 
     // Start is called before the first frame update
