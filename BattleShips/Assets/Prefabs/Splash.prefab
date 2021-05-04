@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092268c771a2dd0479c41c6368d09661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle_template: {fileID: 4666652827642143180, guid: b6541904bbe95534e8dbf5f4f2273ce2, type: 3}
+  particle_template: {fileID: 4666652827642143180, guid: b60942ffd11edcd4bb237208520946fe, type: 3}
   particle_count: 100
   spread_vertical: 10
   spread_horizontal: 5

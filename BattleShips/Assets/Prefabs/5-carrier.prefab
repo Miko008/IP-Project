@@ -161,10 +161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7945608487398522700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73502168b7f88bf408c2f1e12705df5e, type: 3}
+  m_Script: {fileID: 11500000, guid: f6f2fa8b4eca4d14d96c739eacd7c8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sway_rate: 50
-  x_angle: 0.02
-  z_angle: 0.05
-  drowning_depth: 2000
+  sway_rate: 25
+  x_angle: 3
+  z_angle: 1
+  drowning_depth: 10000

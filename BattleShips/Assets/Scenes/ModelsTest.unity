@@ -295,11 +295,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 140454807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463245b6ac305ae4b9280d4f4f7720b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a1f479f405f44241a53b8125e2b4999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BoardManager: {fileID: 868257582}
   y_offset_set: 30
+  invisible_mat: {fileID: 2100000, guid: 021309ae3d1e53644b0e172b10ba6501, type: 2}
 --- !u!114 &140454811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,13 +310,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 140454807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9e75653d57af44f99a035161263c72, type: 3}
+  m_Script: {fileID: 11500000, guid: 81802ebbf24645d46a3aed0570f9b2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bomb_height: 400
   dropping_speed: 300
   BoardManager: {fileID: 1373275982}
-  Bomb: {fileID: 3121882120354678751, guid: b9545277408515b4db919db01634917f, type: 3}
+  Bomb: {fileID: 3121882120354678751, guid: 89c4fc67dc5f56d4488818ad3b82d551, type: 3}
 --- !u!1 &868257582
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9c960e47f1824c46a273a91a75e9bf1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9c960e47f1824c46a273a91a75e9bf1, type: 3}
       propertyPath: m_LocalScale.y
@@ -385,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9c960e47f1824c46a273a91a75e9bf1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e9c960e47f1824c46a273a91a75e9bf1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,10 +618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   y_offset: 60
   y_offset_set: 30
-  placing_mat: {fileID: 2100000, guid: b15e067e84013e248857077ae9d1df8a, type: 2}
+  placing_mat: {fileID: 2100000, guid: 54808d673398d56408b58db9f5f71b94, type: 2}
   shadow_color: {r: 0.688, g: 0.688, b: 0.688, a: 0.7019608}
   wrong_color: {r: 0.6792453, g: 0, b: 0, a: 0.6901961}
-  player_enemy: 1
 --- !u!114 &2094386703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70fb2c882d53d44db1cb54ab25181f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bomb: {fileID: 3121882120354678751, guid: b9545277408515b4db919db01634917f, type: 3}
-  Beam: {fileID: 2868703998172237409, guid: 81efa9fda4759e744b8f9ff981f68e8b, type: 3}
+  Bomb: {fileID: 3121882120354678751, guid: 89c4fc67dc5f56d4488818ad3b82d551, type: 3}
+  Beam: {fileID: 2868703998172237409, guid: 1629d98076d5fc442b8f8601bcd67dee, type: 3}
   beam_height: 50
   fade_time: 20
   bomb_height: 400

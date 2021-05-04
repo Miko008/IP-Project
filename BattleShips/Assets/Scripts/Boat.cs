@@ -22,14 +22,22 @@ public class Boat : MonoBehaviour
 
     private GameManager gameManager;
 
+    private Material ori_material;
+
     void Start()
     {
+        x_angle /= 100;     //just to make it easier in unity editor
+        z_angle /= 100;
+
+        ori_material = GetComponent<Renderer>().material;
+
         hp = GetComponents<BoxCollider>().Length;
         
         StartCoroutine(Sway());
-
+        
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
+
 
     public void SetParty(Party p)
     {
@@ -49,6 +57,18 @@ public class Boat : MonoBehaviour
             gameManager.DeleteBoat(gameObject);
             StartCoroutine(Drown());
         }
+    }
+    
+
+    public void SetMaterial(Material mat)
+    {
+        StartCoroutine(DelayedSetMaterial(mat));
+    }
+
+    IEnumerator DelayedSetMaterial(Material mat)
+    {
+        yield return null; //new WaitForSeconds(0.001f);
+        GetComponent<Renderer>().material = mat;
     }
 
     IEnumerator Sway()
@@ -79,6 +99,9 @@ public class Boat : MonoBehaviour
 
     IEnumerator Drown()
     {
+        if(party == Party.Enemy)
+            GetComponent<Renderer>().material = ori_material;
+
         float x = Random.Range(-0.1f, 0.1f),
               z = Random.Range(-0.1f, 0.1f);
         for(int i = 0; i < drowning_depth; i++)
@@ -89,5 +112,7 @@ public class Boat : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    
 
 }

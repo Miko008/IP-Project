@@ -7,6 +7,7 @@ public class AIBoatSetter : MonoBehaviour
     public GameObject BoardManager;
     private List<GameObject> BoatsToSet = new List<GameObject>();
     public int y_offset_set = 30;
+    public Material invisible_mat;
 
     private List<Transform> Tiles;
 
@@ -31,6 +32,7 @@ public class AIBoatSetter : MonoBehaviour
             GameObject boat = Instantiate(boat_to_set, new Vector3(0, 0, 0), Quaternion.identity);
             BoxCollider[] colliders = boat.GetComponents<BoxCollider>();
             boat.GetComponent<Boat>().SetParty(Party.Enemy);
+            boat.GetComponent<Boat>().SetMaterial(invisible_mat);
             do{
                 boat.transform.position = Tiles[Random.Range(0, Tiles.Count)].transform.position + Vector3.up * y_offset_set;  //randomly choose position
                 boat.transform.Rotate(0, 90 * Random.Range(0,3) , 0);                                                           //and rotation

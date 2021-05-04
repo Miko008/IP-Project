@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
 
     //temp debug
 
-    public bool player_enemy = true;
+    //public bool player_enemy = true;
 
     void Start()
     {
@@ -51,7 +51,9 @@ public class Controller : MonoBehaviour
         boat = Instantiate(_boat, new Vector3(0, 0, 200), Quaternion.identity);
         rend = boat.GetComponent<Renderer>();
         
-        if(player_enemy)
+        
+        boat.GetComponent<Boat>().SetParty(Party.Player1);
+        /*if(player_enemy)
         {
             Debug.Log("Placing as player");
             boat.GetComponent<Boat>().SetParty(Party.Player1);
@@ -60,7 +62,7 @@ public class Controller : MonoBehaviour
         {
             Debug.Log("Placing as enemy");
             boat.GetComponent<Boat>().SetParty(Party.Enemy);
-        }
+        }*/
 
         ori_mat = rend.material;
         ori_color = rend.material.color;

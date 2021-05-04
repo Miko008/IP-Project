@@ -35,9 +35,9 @@ Material:
     - Vector1_19bc0b4e0c574bef83e7d2881f96196e: 4
     - Vector1_23a0978057d6438b8bcfbe094aa6118a: 0.01
     - Vector1_377a71d9ef73407eb0e5913357065ba3: 0.1
-    - Vector1_49bd5c7c19214d9eb3852f3442e8ac5e: 1
-    - Vector1_6a3c28c5ba924d2297d7c683fe8319a1: 5
-    - Vector1_8f830685c4024b72bdecc3c633ca6a81: 5
+    - Vector1_49bd5c7c19214d9eb3852f3442e8ac5e: 1.5
+    - Vector1_6a3c28c5ba924d2297d7c683fe8319a1: 10
+    - Vector1_8f830685c4024b72bdecc3c633ca6a81: 30
     m_Colors:
     - Color_270a8438cf1d4894b2cac2d1c99fa0f1: {r: 0.9386792, g: 1, b: 0.9986373, a: 0}
     - Color_d33c9d6c406347c1ae863881ed0a8f58: {r: 0.1568627, g: 0.5481868, b: 1, a: 0}
