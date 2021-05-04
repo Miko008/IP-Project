@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 140454808}
   - component: {fileID: 140454809}
   - component: {fileID: 140454810}
+  - component: {fileID: 140454811}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -299,6 +300,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoardManager: {fileID: 868257582}
   y_offset_set: 30
+--- !u!114 &140454811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140454807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9e75653d57af44f99a035161263c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomb_height: 400
+  dropping_speed: 300
+  BoardManager: {fileID: 1373275982}
+  Bomb: {fileID: 3121882120354678751, guid: b9545277408515b4db919db01634917f, type: 3}
 --- !u!1 &868257582
 GameObject:
   m_ObjectHideFlags: 0

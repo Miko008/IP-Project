@@ -10,16 +10,17 @@ public class Bomber : MonoBehaviour
                 fade_time = 10,
                 bomb_height = 800,
                 dropping_speed = 10;
-    private bool has_dropped = false,
-                 dropping = false;
+    private bool has_dropped = false;
     private int last_tile;
     private GameObject temp;
+
     void Update()
     {
         Show();
-        if (Input.GetMouseButton(1))
-            has_dropped=false;
+        //if (Input.GetMouseButton(1))
+        //    has_dropped=false;
     }
+
 
     void Show() {
 		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -46,6 +47,11 @@ public class Bomber : MonoBehaviour
             }    
         }
 	}
+
+    public void NextBomb()
+    {
+        has_dropped = false;
+    }
 
     IEnumerator MoreDelay(GameObject Beam)
     {

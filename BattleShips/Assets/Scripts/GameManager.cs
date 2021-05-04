@@ -14,19 +14,26 @@ public class GameManager : MonoBehaviour
                              Enemy_boats;
     private Controller controller;
     private Bomber bomber;
+    private AIBomber AIbomber;
     bool bombing = false,
          place_next_boat = true;
+    Party present_turn;
     void Start()
     {
         foreach (var item in BoardManagers)
             item.GetComponent<BoardManager>().GenerateGrid();
 
         GetComponent<AIBoatSetter>().StartAISetter(Starting_boats);
+        
+        AIbomber = GetComponent<AIBomber>();
+        AIbomber .StartAIBomber();
 
         controller = player_cam.GetComponent<Controller>();
         bomber = player_cam.GetComponent<Bomber>();
         controller.enabled = true;
         bomber.enabled = false;
+
+        present_turn = Party.Player1;
 
         Player_boats = new List<GameObject>();
         Enemy_boats  = new List<GameObject>();
@@ -61,6 +68,33 @@ public class GameManager : MonoBehaviour
     public void ReadyForNextBoat()
     {
         place_next_boat = true;
+    }
+
+    public void NextBomb()
+    {
+        if(present_turn == Party.Player1)
+        {
+            bomber.NextBomb();
+        }
+        else
+        {
+            Debug.Log("AI dropping");
+            StartCoroutine(DelayedAIDrop());
+        }
+    }
+    
+    public void BombMiss()
+    {
+        if(present_turn == Party.Player1)
+        {
+            present_turn = Party.Enemy;
+            NextBomb();
+        }
+        else
+        {
+            present_turn = Party.Player1;
+            NextBomb();
+        }
     }
 
     void Update()
@@ -98,6 +132,14 @@ public class GameManager : MonoBehaviour
         /*if(Input.GetKeyDown(KeyCode.Alpha0))
             controller.player_enemy = !controller.player_enemy;
         */
+    }
+
+    
+    IEnumerator DelayedAIDrop()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        AIbomber.DropBomb();
     }
 
     IEnumerator ChceckBoatLists()

@@ -6,6 +6,13 @@ public class Bomb : MonoBehaviour
 {
     public GameObject explosion,
                     splash;
+                    
+    private GameManager GM;
+
+    void Start()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     void Update()
     {
@@ -14,6 +21,7 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        GM.NextBomb();
         collider.GetComponent<Boat>().TakeDmg();
         //Debug.Log("hit");
         Instantiate(explosion, this.transform.position,
@@ -22,6 +30,7 @@ public class Bomb : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        GM.BombMiss();
         //Debug.Log("hit");
         Instantiate(splash, this.transform.position,
          Quaternion.identity);

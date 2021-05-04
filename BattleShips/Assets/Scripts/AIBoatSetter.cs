@@ -8,7 +8,7 @@ public class AIBoatSetter : MonoBehaviour
     private List<GameObject> BoatsToSet = new List<GameObject>();
     public int y_offset_set = 30;
 
-    private Transform[] Tiles;
+    private List<Transform> Tiles;
 
     public void StartAISetter(List<GameObject> Starting_Boats)
     {
@@ -20,8 +20,10 @@ public class AIBoatSetter : MonoBehaviour
     IEnumerator DelayedCheck() 
     {
         yield return new WaitForSeconds(0.01f);                             //wait for tiles to be generated
-
-        Tiles = BoardManager.GetComponentsInChildren<Transform>();          //parent Transform is also here
+        
+        Tiles = new List<Transform>();
+        Tiles.AddRange(BoardManager.GetComponentsInChildren<Transform>());  //parent Transform is also here
+        Tiles.RemoveAt(0);                                                  //delete parent
         //Debug.Log(Tiles.Length);
 
         foreach (GameObject boat_to_set in BoatsToSet)                      //just bruteforce place boats
@@ -30,13 +32,13 @@ public class AIBoatSetter : MonoBehaviour
             BoxCollider[] colliders = boat.GetComponents<BoxCollider>();
             boat.GetComponent<Boat>().SetParty(Party.Enemy);
             do{
-                boat.transform.position = Tiles[Random.Range(1, Tiles.Length)].transform.position + Vector3.up * y_offset_set;      //skip parent transform
-                boat.transform.Rotate(0, 90 * Random.Range(0,3) , 0);
-            }while(!CheckCanPlace(boat, colliders));
+                boat.transform.position = Tiles[Random.Range(0, Tiles.Count)].transform.position + Vector3.up * y_offset_set;  //randomly choose position
+                boat.transform.Rotate(0, 90 * Random.Range(0,3) , 0);                                                           //and rotation
+            }while(!CheckCanPlace(boat, colliders));                                                                            //validate placement
             DisableTilesBelow(boat, colliders);
         }
 
-        for (int i = 1; i < Tiles.Length; i++){                             //disable placing for all
+        for (int i = 1; i < Tiles.Count; i++){                             //disable placing for all
             Tiles[i].GetComponent<Tile>().DisablePlacing();
         }
     }
