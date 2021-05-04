@@ -9,7 +9,8 @@ public class Tile : MonoBehaviour
                  color_hover = Color.white,
                  color_disabled = Color.black;
     private bool clicked = false,
-                 can_place = true;
+                 can_place = true,
+                 can_bomb = false;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class Tile : MonoBehaviour
     public void Click()
     {
         clicked = true;
+        can_bomb = false;
         //this.GetComponent<Collider>().enabled = false;
         rend.material.color = color_disabled;
     }
@@ -39,6 +41,14 @@ public class Tile : MonoBehaviour
     public bool CanPlace()
     {
         return can_place;
+    }
+    public void EnableBombing()
+    {
+        can_bomb = true;
+    }
+    public bool CanBomb()
+    {
+        return can_bomb;
     }
 }
 

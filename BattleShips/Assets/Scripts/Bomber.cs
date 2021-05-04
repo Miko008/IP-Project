@@ -17,10 +17,6 @@ public class Bomber : MonoBehaviour
     void Update()
     {
         Show();
-        if (Input.GetMouseButton(0) && !has_dropped) {
-            dropping = true;
-            has_dropped = true;
-		}
         if (Input.GetMouseButton(1))
             has_dropped=false;
     }
@@ -30,7 +26,7 @@ public class Bomber : MonoBehaviour
 		RaycastHit hit;
 
 		if (Physics.Raycast(inputRay, out hit)) {
-            if(hit.collider.GetComponent<Tile>()){
+            if(hit.collider.GetComponent<Tile>() && hit.collider.GetComponent<Tile>().CanBomb()){
                 
                 if(hit.collider.GetInstanceID()!=last_tile){
                     if(temp != null)
@@ -40,12 +36,12 @@ public class Bomber : MonoBehaviour
                     StartCoroutine(MoreDelay(temp));
                 }
                 
-                if(dropping){
+                if(Input.GetMouseButton(0) && !has_dropped){
+                    has_dropped = true;
                     GameObject bomb = Instantiate(Bomb, 
                     hit.collider.transform.position + bomb_height * Vector3.up, Quaternion.identity);
                     bomb.GetComponent<Rigidbody>().velocity = dropping_speed * Vector3.down;
                     hit.collider.GetComponent<Tile>().Click();
-                    dropping = false;
                 }
             }    
         }
@@ -53,7 +49,7 @@ public class Bomber : MonoBehaviour
 
     IEnumerator MoreDelay(GameObject Beam)
     {
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 3; i++)
             yield return new WaitForSeconds(1f);
         
         if(Beam != null)

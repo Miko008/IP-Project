@@ -7,6 +7,11 @@ public class Bomb : MonoBehaviour
     public GameObject explosion,
                     splash;
 
+    void Update()
+    {
+        transform.Rotate(0, 0.5f, 0);
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         collider.GetComponent<Boat>().TakeDmg();

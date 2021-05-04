@@ -5,14 +5,15 @@ using UnityEngine;
 public class AIBoatSetter : MonoBehaviour
 {
     public GameObject BoardManager;
-    public List<GameObject> BoatsToSet;
-    public int y_offset_set;
+    private List<GameObject> BoatsToSet = new List<GameObject>();
+    public int y_offset_set = 30;
 
     private Transform[] Tiles;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartAISetter(List<GameObject> Starting_Boats)
     {
+        foreach (var item in Starting_Boats)
+            BoatsToSet.Add(item);
         StartCoroutine(DelayedCheck());
     }
 
@@ -35,21 +36,21 @@ public class AIBoatSetter : MonoBehaviour
             DisableTilesBelow(boat, colliders);
         }
 
-        for (int i = 1; i < Tiles.Length; i++){         //disable placing for all
+        for (int i = 1; i < Tiles.Length; i++){                             //disable placing for all
             Tiles[i].GetComponent<Tile>().DisablePlacing();
         }
     }
 
-    bool CheckCanPlace(GameObject boat, Collider[] colliders)        //same as in Controller.CheckCanPlace5()
+    bool CheckCanPlace(GameObject boat, Collider[] colliders)               //same as in Controller.CheckCanPlace5()
     { 
         bool placeable = true;
         
-        foreach(BoxCollider item in colliders){                            //check for all colliders
+        foreach(BoxCollider item in colliders){                             //check for all colliders
             Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
             RaycastHit testing_hit;
-            if (Physics.Raycast(testing_ray, out testing_hit)){      //if all boxes are clear to place
+            if (Physics.Raycast(testing_ray, out testing_hit)){             //if all boxes are clear to place
                 if(!testing_hit.collider.GetComponent<Tile>().CanPlace())
-                placeable = false;
+                    placeable = false;
             }
             else{
                 placeable = false;
@@ -60,7 +61,7 @@ public class AIBoatSetter : MonoBehaviour
 
     void DisableTilesBelow(GameObject boat, BoxCollider[] colliders) 
     {
-        foreach (BoxCollider item in colliders){       //disable for all colliders
+        foreach (BoxCollider item in colliders){                            //disable for all colliders
             Ray testing_ray = new Ray(boat.transform.position + boat.transform.rotation * Vector3.Scale(item.center, boat.transform.localScale), Vector3.down*100);
             RaycastHit testing_hit;
             if (Physics.Raycast(testing_ray, out testing_hit)) 

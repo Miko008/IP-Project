@@ -15,11 +15,16 @@ public class Controller : MonoBehaviour
     private bool is_placing = false;
     private Color ori_color;
     private Material ori_mat;
+    private GameManager GM;
 
     //temp debug
 
     public bool player_enemy = true;
 
+    void Start()
+    {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     void Update()
     {
@@ -29,7 +34,14 @@ public class Controller : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.R))
                 boat.transform.Rotate(0, 90 , 0);
         }
+        /*else
+        {
+            if(Input.GetMouseButton(0))
+                PickUp();
+
+        }*/
     }
+
 
     public void StartPlacing(GameObject _boat)
     {
@@ -55,6 +67,7 @@ public class Controller : MonoBehaviour
 
         rend.material = placing_mat;
         rend.material.color = shadow_color;
+
 
         is_placing = true;
     }
@@ -86,6 +99,8 @@ public class Controller : MonoBehaviour
 
                 rend.material = ori_mat;
                 rend.material.color = ori_color;
+
+                GM.ReadyForNextBoat();
 
                 is_placing = false;
                 boat = null;

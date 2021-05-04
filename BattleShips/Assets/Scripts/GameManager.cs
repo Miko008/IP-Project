@@ -6,15 +6,23 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] Boats;
-    public Camera player_cam;
+    public GameObject[] Boats,
+                        BoardManagers;
+    public Camera       player_cam;
+    public  List<GameObject> Starting_boats;
     private List<GameObject> Player_boats,
                              Enemy_boats;
     private Controller controller;
     private Bomber bomber;
-    bool bombing = false;
+    bool bombing = false,
+         place_next_boat = true;
     void Start()
     {
+        foreach (var item in BoardManagers)
+            item.GetComponent<BoardManager>().GenerateGrid();
+
+        GetComponent<AIBoatSetter>().StartAISetter(Starting_boats);
+
         controller = player_cam.GetComponent<Controller>();
         bomber = player_cam.GetComponent<Bomber>();
         controller.enabled = true;
@@ -50,12 +58,30 @@ public class GameManager : MonoBehaviour
         Enemy_boats.Remove(dead_boat);
     }
 
+    public void ReadyForNextBoat()
+    {
+        place_next_boat = true;
+    }
 
     void Update()
     {
-        if(!bombing)
+        if(!bombing && place_next_boat)
         {
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            if(Starting_boats.Count > 0)
+            {    
+                controller.StartPlacing(Starting_boats[0]);
+                Starting_boats.RemoveAt(0);
+                place_next_boat = false;
+            }
+            else
+            {
+                GetActiveBoats();
+                StartCoroutine(ChceckBoatLists());
+                controller.enabled = !controller.enabled;
+                bomber.enabled = !bomber.enabled;
+                bombing = !bombing;
+            }
+            /*if(Input.GetKeyDown(KeyCode.Alpha1))
                 controller.StartPlacing(Boats[0]);
             if(Input.GetKeyDown(KeyCode.Alpha2))
                 controller.StartPlacing(Boats[1]);
@@ -65,24 +91,13 @@ public class GameManager : MonoBehaviour
                 controller.StartPlacing(Boats[3]);
             if(Input.GetKeyDown(KeyCode.Alpha5))
                 controller.StartPlacing(Boats[4]);
+            */
         }
 
 
-        if(Input.GetKeyDown(KeyCode.Alpha0))
+        /*if(Input.GetKeyDown(KeyCode.Alpha0))
             controller.player_enemy = !controller.player_enemy;
-
-        if(Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            GetActiveBoats();
-            StartCoroutine(ChceckBoatLists());
-        }
-            
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            controller.enabled = !controller.enabled;
-            bomber.enabled = !bomber.enabled;
-            bombing = !bombing;
-        }
-
+        */
     }
 
     IEnumerator ChceckBoatLists()
