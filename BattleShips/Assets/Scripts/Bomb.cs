@@ -5,7 +5,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject explosion,
-                    splash;
+                      splash,
+                      cross;
                     
     private GameManager GM;
 
@@ -25,6 +26,8 @@ public class Bomb : MonoBehaviour
         collider.GetComponent<Boat>().TakeDmg();
         //Debug.Log("hit");
         Instantiate(explosion, this.transform.position,
+         Quaternion.identity);
+        Instantiate(cross, this.transform.position,
          Quaternion.identity);
         Destroy(gameObject);
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45048898, g: 0.50048643, b: 0.57514894, a: 1}
+  m_IndirectSpecularColor: {r: 0.45143008, g: 0.5007646, b: 0.5714533, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -209,13 +209,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126620154}
-  m_LocalRotation: {x: -0.05024826, y: -0.92164975, z: 0.3345843, w: 0.1899747}
-  m_LocalPosition: {x: 285, y: 507, z: 637}
+  m_LocalRotation: {x: -0.10939084, y: -0.8726889, z: 0.3201643, w: 0.35205495}
+  m_LocalPosition: {x: 1349, y: 445, z: 504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 36.702, y: -151.399, z: 15.907}
+  m_LocalEulerAnglesHint: {x: 28.802, y: -128.634, z: 28.368}
 --- !u!1 &140454807
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bomb: {fileID: 3121882120354678751, guid: 89c4fc67dc5f56d4488818ad3b82d551, type: 3}
-  Beam: {fileID: 2868703998172237409, guid: 1629d98076d5fc442b8f8601bcd67dee, type: 3}
+  Beam: {fileID: 8747680650205570801, guid: f2508d645c16f9c4485e4cf006e15382, type: 3}
   beam_height: 50
   fade_time: 20
   bomb_height: 400

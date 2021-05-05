@@ -128,3 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 5470289815376549410, guid: 13784b085169ed94fbb8df06ef0b6ec0, type: 3}
   splash: {fileID: 259632007508553701, guid: 464c382725020504aa53487ce2cb3d7e, type: 3}
+  cross: {fileID: 7950627290317868332, guid: 70668a0a2b1e02740bc417346d2cc302, type: 3}

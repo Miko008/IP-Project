@@ -31,7 +31,7 @@ public class Bomber : MonoBehaviour
                 
                 if(hit.collider.GetInstanceID()!=last_tile){
                     if(temp != null)
-                        StartCoroutine(DeleteBeam(temp));
+                        Destroy(temp);
                     temp = Instantiate(Beam, hit.collider.transform.position + beam_height * Vector3.up, Quaternion.identity);
                     last_tile = hit.collider.GetInstanceID();
                     StartCoroutine(MoreDelay(temp));
