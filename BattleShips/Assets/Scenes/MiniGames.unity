@@ -294,7 +294,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 95466192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 299777041}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: UserSelectedTrue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &95466192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,9 +470,9 @@ MonoBehaviour:
   questions:
   - fact: 42 + 67 = 119
     isTrue: 0
-  - fact: Kabul is a capital of Afganistan
+  - fact: Kabul is the capital of Afganistan
     isTrue: 1
-  - fact: Sydney is a capital of Australia
+  - fact: Sydney is the capital of Australia
     isTrue: 0
   - fact: 112 / 4 = 28
     isTrue: 1
@@ -476,6 +488,71 @@ MonoBehaviour:
     isTrue: 0
   - fact: In 1918 there was a chickenpox pandemic in Poland
     isTrue: 0
+  - fact: 13 + 26 = 39
+    isTrue: 1
+  - fact: The Nile is the longest river in the world
+    isTrue: 1
+  - fact: 32 / 8 = 4
+    isTrue: 1
+  - fact: 2^10 = 1024
+    isTrue: 1
+  - fact: Chernobyl is located in Belarus
+    isTrue: 0
+  - fact: Mount Fuji is located in Indonesia
+    isTrue: 1
+  - fact: 4^2 = 8
+    isTrue: 0
+  - fact: 132 - 43 = 89
+    isTrue: 1
+  - fact: 'Africa is the largest continent '
+    isTrue: 0
+  - fact: 526 - 321 = 205
+    isTrue: 1
+  - fact: On Earth there are 6 continents
+    isTrue: 0
+  - fact: There are 52 states in the USA
+    isTrue: 0
+  - fact: Ottawa is the capital of Canada
+    isTrue: 1
+  - fact: 123 x 2 = 246
+    isTrue: 1
+  - fact: Peach blossom is the national flower of Japan
+    isTrue: 0
+  - fact: Watermelon is a vegetable
+    isTrue: 1
+  - fact: The human body consists of 206 bones
+    isTrue: 1
+  - fact: Dubai is the capital of the UAE
+    isTrue: 0
+  - fact: 2^4 = 4^2 = 16
+    isTrue: 1
+  - fact: Bangkok is the capital of Thailand
+    isTrue: 1
+  - fact: The currency in Spain is Euro
+    isTrue: 1
+  - fact: In Brazil people speak spanish
+    isTrue: 0
+  - fact: The currency in Russia is the ruble
+    isTrue: 1
+  - fact: Guatemala is located in South America
+    isTrue: 0
+  - fact: 8 x 51 = 408
+    isTrue: 1
+  - fact: Rio de Janeiro is the capital of Brasil
+    isTrue: 0
+  - fact: 753 - 423 = 321
+    isTrue: 0
+  - fact: 63 + 458 = 521
+    isTrue: 1
+  - fact: Cape Town is located in South Africa
+    isTrue: 1
+  - fact: 132 / 6 = 23
+    isTrue: 0
+  factText: {fileID: 1123378292}
+  trueAnswerText: {fileID: 769383697}
+  falseAnswerText: {fileID: 1881929555}
+  animator: {fileID: 1272010613}
+  timeDelay: 1
 --- !u!1 &352704738
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +1001,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &769383695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769383696}
+  - component: {fileID: 769383698}
+  - component: {fileID: 769383697}
+  m_Layer: 5
+  m_Name: TrueAnswer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &769383696
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769383695}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1272010612}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 300, y: -113}
+  m_SizeDelta: {x: 375, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &769383697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769383695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1137255, g: 0.2392157, b: 0.5294118, a: 0.8745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6d0cc44c6c0eaf744948352169214e8b, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: CORRECT!
+--- !u!222 &769383698
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769383695}
+  m_CullTransparentMesh: 1
 --- !u!1 &806273914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1203,7 @@ RectTransform:
   - {fileID: 1131531603}
   - {fileID: 1360465673}
   m_Father: {fileID: 1272010612}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1064,7 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029188052}
   m_Layer: 5
-  m_Name: EquationPanel
+  m_Name: QuestionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1260,7 @@ GameObject:
   - component: {fileID: 1123378293}
   - component: {fileID: 1123378292}
   m_Layer: 5
-  m_Name: Question
+  m_Name: Fact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1346,6 +1502,7 @@ GameObject:
   - component: {fileID: 1272010611}
   - component: {fileID: 1272010610}
   - component: {fileID: 1272010609}
+  - component: {fileID: 1272010613}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1429,8 +1586,10 @@ RectTransform:
   - {fileID: 365804358}
   - {fileID: 147530043}
   - {fileID: 1029188052}
-  - {fileID: 840908888}
+  - {fileID: 769383696}
+  - {fileID: 1881929554}
   - {fileID: 2039676909}
+  - {fileID: 840908888}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1439,6 +1598,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1272010613
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272010608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fa5eefe28547e641b41060b635bd7ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1306428194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,7 +1891,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1360465680}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 299777041}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: UserSelectedFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1360465680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,6 +2363,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1881929553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881929554}
+  - component: {fileID: 1881929556}
+  - component: {fileID: 1881929555}
+  m_Layer: 5
+  m_Name: FalseAnswer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1881929554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881929553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1272010612}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -300, y: -113}
+  m_SizeDelta: {x: 375, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1881929555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881929553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1137255, g: 0.2392157, b: 0.5294118, a: 0.8745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6d0cc44c6c0eaf744948352169214e8b, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: CORRECT!
+--- !u!222 &1881929556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881929553}
+  m_CullTransparentMesh: 1
 --- !u!1 &2039676908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2472,7 @@ RectTransform:
   - {fileID: 432691998}
   - {fileID: 95466185}
   m_Father: {fileID: 1272010612}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
