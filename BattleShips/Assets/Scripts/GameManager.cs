@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Boats,
                         BoardManagers;
     public Camera       player_cam;
+    public GameObject   fireworks;
     public  List<GameObject> Starting_boats;
     private List<GameObject> Player_boats,
                              Enemy_boats;
@@ -155,8 +156,20 @@ public class GameManager : MonoBehaviour
             if(Enemy_boats.Count  == 0)
             {
                 Debug.Log("Player Wins");
+                StartCoroutine(TempWinAnimation());
             }
             yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    IEnumerator TempWinAnimation()
+    {
+        for(;;)
+        {
+            Instantiate(fireworks, 
+            new Vector3(Random.Range(-600, 600), Random.Range(0, 50), Random.Range(0, -500)),
+            Quaternion.identity);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
